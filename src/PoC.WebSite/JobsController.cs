@@ -17,7 +17,7 @@ namespace PoC.WebSite
         }
 
         [Route("api/jobs"), HttpPost]
-        public async Task Post(CreateJobCommand command)
+        public async Task Post(DummyCommand command)
         {
             await _bus.Send(command);
         }

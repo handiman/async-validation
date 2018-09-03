@@ -23,12 +23,12 @@ namespace PoC.WebSite
             await Notify($"Hello from {nameof(NotificationsHub)}!");
         }
 
-        async Task IHandleMessages<CommandValidationFailedEvent>.Handle(CommandValidationFailedEvent message)
+        async Task IHandleMessages<CommandValidationFailedEvent>.Handle(CommandValidationFailedEvent domainEvent)
         {
             await Notify("Validation failed");
         }
 
-        async Task IHandleMessages<CommandValidationSucceededEvent>.Handle(CommandValidationSucceededEvent message)
+        async Task IHandleMessages<CommandValidationSucceededEvent>.Handle(CommandValidationSucceededEvent domainEvent)
         {
             await Notify("Validation succeeded");
         }

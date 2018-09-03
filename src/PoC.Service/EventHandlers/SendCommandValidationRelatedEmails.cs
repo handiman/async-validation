@@ -9,7 +9,7 @@ namespace PoC.Service.EventHandlers
     [UsedImplicitly]
     public sealed class SendCommandValidationRelatedEmails : IHandleMessages<CommandValidationFailedEvent>
     {
-        Task IHandleMessages<CommandValidationFailedEvent>.Handle(CommandValidationFailedEvent message)
+        Task IHandleMessages<CommandValidationFailedEvent>.Handle(CommandValidationFailedEvent domainEvent)
         {
             Console.WriteLine("Faking sending email on validation failure.");
             return Task.CompletedTask;

@@ -11,13 +11,13 @@ namespace PoC.Service.EventHandlers
         : IHandleMessages<CommandValidationFailedEvent>
         , IHandleMessages<CommandValidationSucceededEvent>
     {
-        Task IHandleMessages<CommandValidationFailedEvent>.Handle(CommandValidationFailedEvent message)
+        Task IHandleMessages<CommandValidationFailedEvent>.Handle(CommandValidationFailedEvent domainEvent)
         {
             Console.WriteLine("Command validation failed");
             return Task.CompletedTask;
         }
 
-        Task IHandleMessages<CommandValidationSucceededEvent>.Handle(CommandValidationSucceededEvent message)
+        Task IHandleMessages<CommandValidationSucceededEvent>.Handle(CommandValidationSucceededEvent domainEvent)
         {
             Console.WriteLine("Command validation succeeded");
             return Task.CompletedTask;

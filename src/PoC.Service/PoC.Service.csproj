@@ -66,7 +66,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EventHandlers\SendCommandValidationRelatedEmails.cs" />
-    <Compile Include="CommandHandlers\CreateJobCommandHandler.cs" />
+    <Compile Include="CommandHandlers\DummyCommandHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

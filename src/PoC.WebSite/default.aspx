@@ -12,7 +12,15 @@
                 Command Id:
                 <input class="form-control" type="text" id="id" name="id" readonly="readonly" value="<%= Guid.NewGuid() %>" />
             </label>
-            
+            <label for="shouldfail">
+                Fake failing command:
+                <input type="checkbox" id="shouldfail" name="shouldfail" />
+            </label>
+            <label for="longrunning">
+                Fake long running command:
+                <input type="checkbox" id="longrunning" name="longrunning" />
+            </label>
+
             <button class="btn" type="submit">Create Job</button>
         </form>
         <div class="col-5">

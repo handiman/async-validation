@@ -26,7 +26,7 @@ namespace PoC.Messaging
                     .UseRabbitMq("amqp://localhost", queueName))
                 .Routing(routing => routing
                     .TypeBased()
-                    .MapAssemblyOf<CreateJobCommand>(queueName));
+                    .MapAssemblyOf<DummyCommand>(queueName));
         }
 
         private static void SubscribeToDomainEvents(IComponentContext container)

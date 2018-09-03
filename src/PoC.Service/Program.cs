@@ -21,7 +21,7 @@ namespace PoC.Service
         {
             var builder = new ContainerBuilder();
             builder.RegisterModule<RebusModule>();
-            builder.RegisterHandlersFromAssemblyOf<CreateJobCommandHandler>();
+            builder.RegisterHandlersFromAssemblyOf<DummyCommandHandler>();
             return builder.Build();
         }
     }

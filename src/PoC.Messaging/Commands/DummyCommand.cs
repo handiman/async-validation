@@ -2,7 +2,7 @@
 
 namespace PoC.Messaging.Commands
 {
-    public sealed class CreateJobCommand
+    public sealed class DummyCommand
     {
         private Guid _id = Guid.NewGuid();
 
@@ -11,5 +11,9 @@ namespace PoC.Messaging.Commands
             get => _id;
             set => _id = Guid.Empty == value ? Guid.NewGuid() : value;
         }
+
+        public bool ShouldFail { get; set; }
+
+        public bool LongRunning { get; set; }
     }
 }
