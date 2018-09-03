@@ -14,11 +14,11 @@
             </label>
             <label for="shouldfail">
                 Fake failing command:
-                <input type="checkbox" id="shouldfail" name="shouldfail" />
+                <input type="checkbox" id="shouldfail" name="shouldfail" value="true" />
             </label>
             <label for="longrunning">
                 Fake long running command:
-                <input type="checkbox" id="longrunning" name="longrunning" />
+                <input type="checkbox" id="longrunning" name="longrunning" value="true" />
             </label>
 
             <button class="btn" type="submit">Create Job</button>
@@ -37,7 +37,9 @@
             "use strict";
             $("form").submit(function (e) {
                 e.preventDefault();
-                $.post("api/jobs", $(this).serialize());
+                var data = $(this).serialize();
+                console.log(data);
+                $.post("api/jobs", data);
             });
 
             var notify = function (message) {

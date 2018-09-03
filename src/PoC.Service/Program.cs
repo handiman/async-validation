@@ -1,12 +1,15 @@
 ﻿using System;
 using Autofac;
 using PoC.Messaging;
-using PoC.Service.CommandHandlers;
+using PoC.Messaging.Commands;
+using PoC.Messaging.Events;
+using Rebus.Bus;
 using Rebus.Config;
+using Rebus.Routing.TypeBased;
 
 namespace PoC.Service
 {
-    internal static class Program
+    internal sealed class Program
     {
         private static void Main()
         {
@@ -20,8 +23,22 @@ namespace PoC.Service
         private static IDisposable DependencyConfiguration()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterModule<RebusModule>();
-            builder.RegisterHandlersFromAssemblyOf<DummyCommandHandler>();
+
+            builder.RegisterRebus(cfg => cfg
+                .Logging(logging =>
+                    logging.None())
+                .Transport(transport => 
+                    transport.UseRabbitMq("amqp://localhost", "publisher"))
+            );
+
+            builder.RegisterHandlersFromAssemblyOf<Program>();
+            builder.RegisterBuildCallback(container =>
+            {
+                var bus = container.Resolve<IBus>();
+                bus.Subscribe<CommandValidationFailedEvent>();
+                bus.Subscribe<CommandValidationSucceededEvent>();
+            });
+
             return builder.Build();
         }
     }

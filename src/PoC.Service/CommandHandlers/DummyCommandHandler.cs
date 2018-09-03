@@ -21,11 +21,14 @@ namespace PoC.Service.CommandHandlers
 
         async Task IHandleMessages<DummyCommand>.Handle(DummyCommand command)
         {
-            Console.WriteLine("Faking validation.");
-
             if (command.LongRunning)
             {
+                Console.WriteLine("Faking long running validation. Sleeping for 30 seconds.");
                 Thread.Sleep(TimeSpan.FromSeconds(30));
+            }
+            else
+            {
+                Console.WriteLine("Faking validation");
             }
 
             if (command.ShouldFail)

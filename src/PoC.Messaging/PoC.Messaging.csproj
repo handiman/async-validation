@@ -55,9 +55,6 @@
     <Reference Include="Rebus.Autofac, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Rebus.Autofac.5.2.0\lib\net45\Rebus.Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Rebus.RabbitMq, Version=4.4.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Rebus.RabbitMq.4.4.2\lib\net452\Rebus.RabbitMq.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -72,7 +69,6 @@
     <Compile Include="Events\CommandValidationFailedEvent.cs" />
     <Compile Include="Events\CommandValidationSucceededEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RebusModule.cs" />
     <Compile Include="Commands\DummyCommand.cs" />
   </ItemGroup>
   <ItemGroup>

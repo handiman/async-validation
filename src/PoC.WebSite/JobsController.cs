@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using System.Web.Http;
+﻿using System.Web.Http;
 using JetBrains.Annotations;
 using PoC.Messaging.Commands;
 using Rebus.Bus;
@@ -17,9 +16,9 @@ namespace PoC.WebSite
         }
 
         [Route("api/jobs"), HttpPost]
-        public async Task Post(DummyCommand command)
+        public void Post([FromBody] DummyCommand command)
         {
-            await _bus.Send(command);
+            _bus.Send(command);
         }
     }
 }
