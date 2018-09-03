@@ -6,13 +6,14 @@ using JetBrains.Annotations;
 using Microsoft.Owin;
 using Owin;
 using PoC.Messaging;
+using Rebus.Config;
 
 [assembly: OwinStartup(typeof(PoC.WebSite.Startup))]
 
 namespace PoC.WebSite
 {
     [UsedImplicitly]
-    public class Startup
+    public sealed class Startup
     {
         [UsedImplicitly]
         public void Configuration(IAppBuilder app)
@@ -32,7 +33,7 @@ namespace PoC.WebSite
             var builder = new ContainerBuilder();
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterModule<RebusModule>();
-            builder.RegisterModule<HandlerModule>();
+            builder.RegisterHandlersFromAssemblyOf<Startup>();
             return builder.Build();
         }
     }

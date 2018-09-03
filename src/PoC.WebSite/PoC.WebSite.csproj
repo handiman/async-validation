@@ -177,7 +177,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HandlerModule.cs" />
     <Compile Include="JobsController.cs" />
     <Compile Include="NotificationsHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
