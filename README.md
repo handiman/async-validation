@@ -16,5 +16,5 @@ Requirements:
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 * [RabbitMQ on localhost](https://www.rabbitmq.com/download.html)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/4pc2kc3h5gix06m4/branch/master?svg=true)](https://ci.appveyor.com/project/henrikbecker/async-validation/branch/master)
+![Build status](https://dev.azure.com/henrikbecker/Demos/_apis/build/status/handiman.async-validation?branchName=master)
 
