@@ -1,4 +1,5 @@
-﻿*.jar
+﻿queue/
+*.jar
 
 #OS junk files
 [Tt]humbs.db
